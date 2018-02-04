@@ -153,3 +153,11 @@ $ Bring in the dependencies in app.js using const session = require('express-ses
 * Create a new partials for output a message or output (under partials - _msg.handlebars)
 * Include the partials in main.layout under body, {{> _msg}}
 * Now add the flash message inside all the crud operation in app.js.
+
+## Authentication - PassportJS ##
+
+* Create Login route, registration route in app.js(app.get('/user/login')).
+
+### Seperate the routes from app.js into seperate routes folder -> routes/ideas,user
+* Link the ideas.js to app.js, for app.js (Deleted all /ideas in ideas.js)
+* in app.js - const ideas = require('./routes/idea')
