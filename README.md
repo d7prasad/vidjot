@@ -145,3 +145,11 @@ app.use(bodyParser.json())
 
 ##  Express session handling & Flash message ##
 $ sudo npm install express-session connect-flash --save
+$ Bring in the dependencies in app.js using const session = require('express-session')
+* Add express-session middleware app.use(session.. )
+* Change the secret keyword and delete cookie attribute.
+* To connect flash - app.use(flash())
+* set global variables middleware in app.use, res.locals.success_msg, res.locals.error_msg, res.local.error
+* Create a new partials for output a message or output (under partials - _msg.handlebars)
+* Include the partials in main.layout under body, {{> _msg}}
+* Now add the flash message inside all the crud operation in app.js.
