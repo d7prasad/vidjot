@@ -25,7 +25,7 @@ Express js:
 * Express is a web framework.
 * Documentation available in expressjs.com
 
-VidJot - Application Set-up
+# VidJot - Application Set-up #
 ---------------------------
 * Create Package JSON
 $ npm init
@@ -40,7 +40,7 @@ $ sudo npm install --save express
 
 * Create Basic routing for root / in app.js
 
-* Install nodemon
+## Install nodemon ##
 $ sudo npm install -g nodemon - this we install globally, so it will not present in node modules, to view the file we can enter the following
 $ npm root -g
 $ we can start our application by - $nodemon
@@ -78,7 +78,7 @@ $ sudo npm install express-handlebars --save
 * create models folder & the files - with first letter as Caps (Idea.js) - It's a good practise for models to capitalize the first letter.
 * Bring the created model(Idea.js) inside app.js
 
-* ---Create Idea and save that to MongoDB---
+ ## Create Idea and save that to MongoDB ##
 
 * Create add idea option in the menubar
 * Add route to '/ideas/add' in app.js
@@ -91,19 +91,20 @@ $ sudo npm install express-handlebars --save
 * Inside that, we need to use 'bodyparts'(thirparty module) to catch values from form entered
 * Install it(npm install --save body-parser), require it, two lines of middleware dependency code.
 * Paste this two lines - Took from https://www.npmjs.com/package/body-parser
-// parse application/x-www-form-urlencoded
+
+## parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
  
-// parse application/json
+## parse application/json ##
 app.use(bodyParser.json())
 * BodyParser helps us to access the req object using req.body
 
-// Validation
+## Validation ##
 * We can have client side validation e.g: required in text filed, but keeping a server side validation is always good.
 * Server side validation starts inside app.post('/ideas') - route handler
 * Now in add.handlebars, loop through the errors using {{#each errors}} with div alert alert-danger
 
-<!-- Save values into MongoDB from /ideas/add form -->
+## Save values into MongoDB from /ideas/add form ##
 * In  the else part of app.post('/ideas') after succesfull validation, save the contents using Ideas.schema into MongoDB
 * Now execute this in $ terminal to enter into mongodb instance - mongo --host 127.0.0.1:27017
 * $ show dbs - to list our newly created db's 'vidjot-dev'
@@ -111,12 +112,12 @@ app.use(bodyParser.json())
 * $ show collections -> ideas(Which is the model, we already created in app.js)
 * $ db.ideas.find() -> This will list all the list of ideas which we entered.
 
-<!-- Fetching values from MongoDB -->
+## Fetching values from MongoDB ##
 * Create route for /ideas page in app.js
 * Also use Idea.find({}) - pass empty, since we want to fetch all, and .sort by date field, and pass ideas(collection) to the view.
 * Now loop through the ideas in index.handlebars
 
-<!-- Edit the ideas & Delete -- Here we are going to use put & delete method, so we have to use Method override to make it work in the simple form-->
+## Edit the ideas & Delete -- Here we are going to use put & delete method, so we have to use Method override to make it work in the simple form ##
 
 * Create route for /ideas/edit page by passing the id as a param
 * Add edit button in ideas/index.handlebars by passing in the id param
@@ -136,11 +137,11 @@ app.use(bodyParser.json())
 * Complete app.put method now, with updation of ideas.
 
 
-<!-- Delete a idea -->
+## Delete a idea ##
 
 * Add a delete button under ideas/index.handlebars
 * Handle the rourting for app.delete in app.js
 
 
-<!-- Express session handling & Flash message -->
+##  Express session handling & Flash message ##
 $ sudo npm install express-session connect-flash --save
