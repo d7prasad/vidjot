@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const path = require('path');
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
@@ -31,6 +32,9 @@ app.set('view engine', 'handlebars');
 // Body Parse middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+// Express static
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Method override middleware
 app.use(methodOverride('_method'))

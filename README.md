@@ -161,3 +161,26 @@ $ Bring in the dependencies in app.js using const session = require('express-ses
 ### Seperate the routes from app.js into seperate routes folder -> routes/ideas,user
 * Link the ideas.js to app.js, for app.js (Deleted all /ideas in ideas.js)
 * in app.js - const ideas = require('./routes/idea')
+* Also Use those routes at the bottom for the respective routing.
+// User Routes
+app.use('/ideas', ideas)
+app.use('/users', users)
+
+## Make use of public folder in Express ##
+* create public folder in root.
+* Place Css & Images in public folder
+* in app.js -> import express module -> const path = require('path')
+* app.use(express.static(path.join(__dirname, 'public')))
+
+
+
+## Day 3: User Registration - Form ##
+
+* Create 'users' folder under 'views', and create two files 'login.handlebars' & 'register.handlebars'
+* Create User model, like idea, under /models
+* Now, we need to encrypt/decrypt the password entered in the view using bcrypt.js
+* sudo npm install --save bcryptjs
+* Handle Post request from login/register.handlebars in routes/users.js
+* Handle server side validation for login registration form under routes/users.js
+
+### User form validation is done, now gonna encrypt/decrypt password ###
