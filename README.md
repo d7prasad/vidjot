@@ -1,5 +1,10 @@
 NodeJs&Express_MongoDB App - Notes:
 
+***************** To start this application kindly execute the below after installing the node & Mongodb **************
+* To start the service - sudo service mongod start - Execute this in terminal && execute nodemon to start this application with mongoDb connection.
+
+************************************************************************************************************************
+
 * NPM is a runtime engine
 * Node works on non-blocking mode, that is while doing a I/O operation, we don't need to wait for it to complete, rather one upload, can continue and we can continue doing something else, until the callback fires on the first I/O operation.
 * It's event driven system.

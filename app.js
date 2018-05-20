@@ -46,7 +46,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
-// To connect flash
+// To connect flash - This is to use flash in our pages to display error/success messages
 app.use(flash())
 
 // Global variables
