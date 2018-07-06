@@ -1,7 +1,9 @@
 NodeJs&Express_MongoDB App - Notes:
 
 ***************** To start this application kindly execute the below after installing the node & Mongodb **************
-* To start the service - sudo service mongod start - Execute this in terminal && execute nodemon to start this application with mongoDb connection.
+* To start the service - 
+* sudo service mongod start - Execute this in terminal
+* nodemon - to start this application with mongoDb connection.
 
 ************************************************************************************************************************
 
@@ -184,8 +186,14 @@ app.use('/users', users)
 * Create 'users' folder under 'views', and create two files 'login.handlebars' & 'register.handlebars'
 * Create User model, like idea, under /models
 * Now, we need to encrypt/decrypt the password entered in the view using bcrypt.js
-* sudo npm install --save bcryptjs
+* sudo npm install --save bcryptjs & sudo npm install --save passport
 * Handle Post request from login/register.handlebars in routes/users.js
 * Handle server side validation for login registration form under routes/users.js
 
 ### User form validation is done, now gonna encrypt/decrypt password ###
+
+* Upon Successfull registration, User details will be stored in DB now, but before that lets encrypt the passwords
+* Create const in user.js -> const passport & const bcrypt
+* create 'newUser' object in 'users/register' after successfull validation -> user.js
+* create bcrypt.genSalt() and .hash()
+* After hashing the password, save the user into the user object
